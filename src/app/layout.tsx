@@ -4,6 +4,8 @@ import './globals.css';
 import { ThemeProvider } from '@/providers/theme-providers';
 import { ClerkProvider } from '@clerk/nextjs';
 
+import ModelProvider from '../providers/model-provider';
+
 const inter = DM_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -28,7 +30,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <ModelProvider>{children}</ModelProvider>
           </ThemeProvider>
         </body>
       </html>

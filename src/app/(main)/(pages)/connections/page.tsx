@@ -21,7 +21,13 @@ const Connections = (props: Props) => {
           Connect all your apps directly from here. You may need to connect
           these apps regularly to refresh verification
           {CONNECTIONS.map((connection) => (
-            <ConnectionCard key={connection.title} />
+            <ConnectionCard
+              key={connection.title}
+              description={connection.description}
+              icon={connection.image}
+              type={connection.title}
+              // connected={connections}
+            />
           ))}
         </section>
       </div>
