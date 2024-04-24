@@ -6,6 +6,8 @@ import { ClerkProvider } from '@clerk/nextjs';
 
 import ModelProvider from '../providers/model-provider';
 
+import { Toaster } from 'sonner';
+
 const inter = DM_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -30,7 +32,10 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <ModelProvider>{children}</ModelProvider>
+            <ModelProvider>
+              {children}
+              <Toaster />
+            </ModelProvider>
           </ThemeProvider>
         </body>
       </html>
